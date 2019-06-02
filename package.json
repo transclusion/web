@@ -1,0 +1,53 @@
+{
+  "private": true,
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "scripts": {
+    "babel-build": "babel src --out-dir dist/cjs",
+    "babel-dev": "babel src --watch --out-dir dist/cjs",
+    "build": "run-s clean babel-build parcel-build",
+    "clean": "rimraf .cache dist",
+    "deploy": "run-s build now-deploy",
+    "dev": "parcel src/dev.html",
+    "format": "prettier-eslint --write \"**/*.js\"",
+    "lint": "eslint .",
+    "now-build": "run-s babel-build parcel-build",
+    "now-dev": "run-p babel-dev parcel-dev",
+    "now-deploy": "now --target production",
+    "parcel-build": "NODE_ENV=production parcel build src/client.css src/client.js --out-dir dist/static",
+    "parcel-dev": "parcel watch src/client.js --out-dir dist/static",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marius Lundgård <studio@mariuslundgard.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.3",
+    "prettier-eslint-cli": "^4.7.1",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.6",
+    "@sanity/client": "^0.140.17",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "segmented-property": "^2.0.4",
+    "styled-components": "^4.2.1"
+  }
+}

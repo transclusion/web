@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "web",
+  "alias": ["transclusion.org"],
+  "builds": [
+    { "src": "dist/cjs/server.js", "use": "@now/node" },
+    { "src": "dist/static/**/*", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/static/(.*)", "dest": "dist/static/$1" },
+    { "src": ".*", "dest": "dist/cjs/server.js" }
+  ]
+}
