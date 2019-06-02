@@ -6,7 +6,9 @@ import {createStore} from './lib/store'
 import {StoreProvider} from './store'
 
 const store = createStore({initialState: window.__state || {}})
-// window.store = store;
+
+// for debugging
+window.store = store
 
 function Provider ({children}) {
   return (
