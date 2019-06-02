@@ -21,8 +21,9 @@ const Preview = styled.li`
     bottom: 0;
     text-decoration: none;
     display: block;
-    background: ${props => props.bg};
-    color: ${props => props.fg};
+    background: ${props => props.bg || '#f9f9f9'};
+    color: ${props => props.fg || '#234'};
+    border-radius: 2px;
   }
 
   & > a > div {
@@ -31,14 +32,15 @@ const Preview = styled.li`
     bottom: 0;
     right: 0;
     padding: 2em 1.25em;
-    transition: opacity 250ms;
+    /* transition: opacity 250ms; */
   }
 
   & > a:hover > div {
-    opacity: 0;
+    /* opacity: 0; */
   }
 
   & h3 {
+    font-family: SF Mono, Menlo, monospace;
     font-size: 2em;
     line-height: 1;
     margin: 0 0 0.25rem;

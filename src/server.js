@@ -72,7 +72,8 @@ export default (req, res) => {
           })
         )
       } catch (err) {
-        res.end(err.message)
+        console.error('Error: ' + err.message)
+        res.end('Something went wrong')
       } finally {
         sheet.seal()
       }
