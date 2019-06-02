@@ -19,6 +19,7 @@ function renderDocument ({helmet, html, state, style}) {
     ${helmet.title.toString()}
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     ${helmet.meta.toString()}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
     <link rel="stylesheet" href="/static/client.css">
     ${style}
   </head>
