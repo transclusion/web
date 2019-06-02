@@ -25,15 +25,19 @@ const Root = styled.main`
   & > article > div {
     padding: 1.5em;
     margin: 0 auto;
-  }
 
-  & code {
-    font-family: SF Mono, Menlo, monospace;
-    font-size: 14px;
-    background: #234;
-    color: #def;
-    padding: 2px;
-    border-radius: 2px;
+    & h2 {
+      margin: 4rem 0 2rem;
+    }
+
+    & code {
+      font-family: SF Mono, Menlo, monospace;
+      font-size: 14px;
+      background: #234;
+      color: #def;
+      padding: 2px;
+      border-radius: 2px;
+    }
   }
 `
 
