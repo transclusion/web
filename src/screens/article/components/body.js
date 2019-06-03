@@ -2,7 +2,7 @@ import BlockContent from '@sanity/block-content-to-react'
 import React from 'react'
 import Highlight from 'react-highlight'
 import styled from 'styled-components'
-import {config} from '../../sanity'
+import {config} from '../../../sanity'
 
 const CodeBlock = styled.div`
   font-size: 14px;
@@ -14,7 +14,6 @@ const CodeBlock = styled.div`
   }
 
   & > pre > .hljs {
-    /* background: #eee; */
     padding: 1.5rem;
   }
 
@@ -23,22 +22,22 @@ const CodeBlock = styled.div`
   }
 `
 
+function Code ({code, language}) {
+  return (
+    <CodeBlock>
+      <Highlight className={language}>{code}</Highlight>
+    </CodeBlock>
+  )
+}
+
 const serializers = {
   types: {
     code: props => {
-      console.log(props)
-      return (
-        <CodeBlock>
-          <Highlight className={props.node.language}>{props.node.code}</Highlight>
-        </CodeBlock>
-      )
-      // return <pre>{JSON.stringify(props.node, null, 2)}</pre>
+      return <Code {...props.node} />
     }
   }
 }
 
-function Body ({blocks}) {
+export function Body ({blocks}) {
   return <BlockContent {...config} blocks={blocks} serializers={serializers} />
 }
-
-export default Body

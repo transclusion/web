@@ -5,7 +5,6 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
-  color: #000;
 }
 
 html, body, #root {

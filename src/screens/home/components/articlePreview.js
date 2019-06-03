@@ -3,6 +3,7 @@ import {get} from 'segmented-property'
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from '../../../history'
+import {useTheme} from '../../../theme'
 
 const Preview = styled.li`
   position: relative;
@@ -21,9 +22,8 @@ const Preview = styled.li`
     bottom: 0;
     text-decoration: none;
     display: block;
-    background: ${props => props.bg || '#f9f9f9'};
-    color: ${props => props.fg || '#234'};
-    border-radius: 2px;
+    background: ${props => props.bg};
+    color: ${props => props.fg};
   }
 
   & > a > div {
@@ -52,11 +52,12 @@ const Preview = styled.li`
 `
 
 export function ArticlePreview ({data, onRegister, time}) {
+  const theme = useTheme()
   const publishedTime = Date.parse(data.publishedAt)
   const offset = (time - publishedTime) / 50000000
   const headerRatio = get(data, 'metadata/headerRatio') || '1:1'
-  const fg = get(data, 'metadata/fg/hex')
-  const bg = get(data, 'metadata/bg/hex')
+  const fg = get(data, 'metadata/fg/hex') || theme.bg
+  const bg = get(data, 'metadata/bg/hex') || theme.fg
   const [w, h] = headerRatio.split(':').map(Number)
   return (
     <Preview w={w} h={h} fg={fg} bg={bg} offset={Math.round(offset)}>

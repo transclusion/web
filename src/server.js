@@ -10,8 +10,9 @@ import {createStore} from './lib/store'
 import {resolveLoaders} from './loader'
 import screens from './screens'
 import {StoreProvider} from './store'
+import {ThemeProvider, themes} from './theme'
 
-function renderDocument ({helmet, html, state, style}) {
+function renderDocument ({helmet, html, state, style, theme}) {
   return `<!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +24,7 @@ function renderDocument ({helmet, html, state, style}) {
     <link rel="stylesheet" href="/static/client.css">
     ${style}
   </head>
-  <body>
+  <body style="background:${theme.bg};color:${theme.fg}">
     <div id="root">${html}</div>
     <script>window.__state = ${JSON.stringify(state)}</script>
     <script src="/static/client.js"></script>
@@ -33,13 +34,16 @@ function renderDocument ({helmet, html, state, style}) {
 
 function Provider ({children, location, store}) {
   return (
-    <HistoryProvider source={createServerHistorySource(location)}>
-      <StoreProvider store={store}>{children}</StoreProvider>
-    </HistoryProvider>
+    <ThemeProvider mode='light'>
+      <HistoryProvider source={createServerHistorySource(location)}>
+        <StoreProvider store={store}>{children}</StoreProvider>
+      </HistoryProvider>
+    </ThemeProvider>
   )
 }
 
 export default (req, res) => {
+  const theme = themes.light
   const store = createStore()
   const sheet = new ServerStyleSheet()
   const url = new URL(req.url, 'http://localhost:3000')
@@ -69,7 +73,8 @@ export default (req, res) => {
             helmet: Helmet.renderStatic(),
             html,
             state,
-            style: sheet.getStyleTags()
+            style: sheet.getStyleTags(),
+            theme
           })
         )
       } catch (err) {
