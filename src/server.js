@@ -32,9 +32,9 @@ function renderDocument ({helmet, html, state, style, theme}) {
 </html>`
 }
 
-function Provider ({children, location, store}) {
+function Provider ({children, location, store, theme}) {
   return (
-    <ThemeProvider mode='light'>
+    <ThemeProvider mode='light' setTheme={() => void 0}>
       <HistoryProvider source={createServerHistorySource(location)}>
         <StoreProvider store={store}>{children}</StoreProvider>
       </HistoryProvider>

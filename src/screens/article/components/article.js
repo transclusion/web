@@ -20,12 +20,15 @@ const Root = styled.article`
       margin: 4rem 0 1rem;
     }
 
-    & code {
+    & :not(pre) > code {
       font-family: SF Mono, Menlo, monospace;
-      font-size: 13px;
+      font-size: 14px;
       background: ${({theme}) => theme.code.bg};
       color: ${({theme}) => theme.code.fg};
       padding: 2px;
+      font-weight: 500;
+      box-shadow: 0 0 0 1px ${({theme}) => theme.code.outline};
+      border-radius: 2px;
     }
 
     & a {
@@ -82,7 +85,7 @@ const ArticleHeader = styled.header`
 `
 
 export function Article ({data}) {
-  const theme = useTheme()
+  const {theme} = useTheme()
   const fg = get(data, 'metadata/fg/hex') || theme.bg
   const bg = get(data, 'metadata/bg/hex') || theme.fg
   const headerRatio = get(data, 'metadata/headerRatio') || '1:1'

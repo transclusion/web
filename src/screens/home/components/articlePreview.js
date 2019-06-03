@@ -48,7 +48,7 @@ const Preview = styled.li`
 `
 
 export function ArticlePreview ({data, onRegister, time}) {
-  const theme = useTheme()
+  const {theme} = useTheme()
   const publishedTime = data.publishedAt ? Date.parse(data.publishedAt) : Date.now()
   const offset = (time - publishedTime) / 50000000
   const headerRatio = get(data, 'metadata/headerRatio') || '1:1'

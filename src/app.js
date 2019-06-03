@@ -1,4 +1,6 @@
 import React, {useEffect} from 'react'
+import styled from 'styled-components'
+import {ThemeSwitcher} from './components'
 import {useHistory} from './history'
 import {resolveLoaders} from './loader'
 import screens from './screens'
@@ -18,6 +20,12 @@ export function matchRoute ({path, query}) {
   }
 }
 
+const Controls = styled.div`
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+`
+
 export function App () {
   const ref = useRef()
   const route = matchRoute(useHistory().location)
@@ -25,7 +33,15 @@ export function App () {
   useEffect(() => {
     if (load) resolveLoaders(ref, load(route.params))
   }, [route.name])
-  return <Component {...route.params} />
+  return (
+    <>
+      {' '}
+      <Controls>
+        <ThemeSwitcher />
+      </Controls>
+      <Component {...route.params} />
+    </>
+  )
 }
 
 export default App
