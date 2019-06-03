@@ -16,6 +16,13 @@ function renderDocument ({helmet, html, state, style, theme}) {
   return `<!doctype html>
 <html lang="en">
   <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141373569-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-141373569-1');
+    </script>
     <meta charset="utf-8">
     ${helmet.title.toString()}
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
