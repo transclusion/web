@@ -1,70 +1,109 @@
-/*
-Dracula Theme v1.2.0
-https://github.com/zenorocha/dracula-theme
-Copyright 2015, All rights reserved
-Code licensed under the MIT license
-http://zenorocha.mit-license.org
-@author Éverton Ribeiro <nuxlli@gmail.com>
-@author Zeno Rocha <hi@zenorocha.com>
-*/
-
 .hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #282a36;
+  background: #273553;
+  color: #dfe1e6;
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-section,
-.hljs-link {
-  color: #8be9fd;
+.hljs::selection,
+.hljs *::selection {
+  background-color: #45516b;
 }
 
-.hljs-function .hljs-keyword {
-  color: #ff79c6;
+.hljs-comment {
+  color: #6c758a;
+  font-style: italic;
 }
 
-.hljs,
-.hljs-subst {
-  color: #f8f8f2;
+.hljs-selector-tag {
+  color: #c196f5;
 }
 
 .hljs-string,
-.hljs-title,
-.hljs-name,
-.hljs-type,
-.hljs-attribute,
+.hljs-subst {
+  color: #9bee91;
+}
+
+.hljs-number,
+.hljs-regexp,
+.hljs-variable,
+.hljs-template-variable {
+  color: #f59e6f;
+}
+
+.hljs-keyword {
+  color: #c196f5;
+}
+.hljs-function > .hljs-title {
+  color: #75A5FF;
+}
+.hljs-tag {
+  color: #abb0bc;
+}
+.hljs-name {
+  color: #f4848a;
+}
+.hljs-type {
+  color: #f59e6f;
+}
+
+.hljs-attribute {
+  color: #76d5ee;
+}
+
 .hljs-symbol,
 .hljs-bullet,
-.hljs-addition,
-.hljs-variable,
-.hljs-template-tag,
-.hljs-template-variable {
-  color: #f1fa8c;
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-link {
+  color: #c196f5;
 }
 
-.hljs-comment,
-.hljs-quote,
-.hljs-deletion,
+.hljs-params {
+  color: #dfe1e6;
+}
+
+
 .hljs-meta {
-  color: #6272a4;
+  color: #75A5FF;
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-title,
-.hljs-section,
-.hljs-doctag,
-.hljs-type,
-.hljs-name,
-.hljs-strong {
-  font-weight: bold;
+.hljs-title {
+  color: #75A5FF;
+}
+
+.hljs-section {
+  color: #ffc66d;
+}
+
+.hljs-addition {
+  background-color: #144212;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: #600;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-selector-class {
+  color: #f7ea75;
+}
+
+.hljs-selector-id {
+  color: #f9c462;
 }
 
 .hljs-emphasis {
   font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
 }

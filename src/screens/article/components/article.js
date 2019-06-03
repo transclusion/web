@@ -13,8 +13,10 @@ const Root = styled.article`
     padding: 1.5rem;
     margin: 0 auto;
     font-size: 15px;
+    color: ${({theme}) => theme.bodyText.color};
 
     & h2 {
+      color: ${({theme}) => theme.fg};
       font-size: 1.25rem;
       line-height: 1.25;
       margin: 4rem 0 1rem;
@@ -27,7 +29,6 @@ const Root = styled.article`
       color: ${({theme}) => theme.code.fg};
       padding: 2px;
       font-weight: 500;
-      box-shadow: 0 0 0 1px ${({theme}) => theme.code.outline};
       border-radius: 2px;
     }
 
@@ -67,7 +68,7 @@ const ArticleHeader = styled.header`
     top: 100%;
     left: 0;
     right: 0;
-    padding: 2rem 1.25rem;
+    padding: 2rem 1.5rem;
     transform: translate3d(0, -100%, 0);
   }
 

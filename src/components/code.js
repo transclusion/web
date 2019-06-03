@@ -17,8 +17,11 @@ const CodeBlock = styled.div`
   }
 
   & > pre > .hljs {
+    display: block;
     padding: 1.5rem;
-    outline: ${({theme}) => `1px solid ${theme.code.outline}`};
+    background: ${({theme}) => theme.code.bg};
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   & > pre > code {
