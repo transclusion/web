@@ -1,8 +1,9 @@
 const __DEV__ = process.env.NODE_ENV
 
-const QUERY_ARTICLE = `*[
-  _type == $type
-  && slug.current == $slug
+function query (slug) {
+  return `*[
+  _type == 'article'
+  && slug.current == '${slug}'
   ${__DEV__ ? '' : `&& defined(publishedAt)`}
 ]{
   publishedAt,
@@ -18,12 +19,12 @@ const QUERY_ARTICLE = `*[
     }
   }
 }[0]`
+}
 
-export function loadArticle (slug) {
+export function queryArticle (slug) {
   return {
     type: 'groq',
     key: `article/${slug}`,
-    query: QUERY_ARTICLE,
-    params: {type: 'article', slug}
+    query: query(slug)
   }
 }

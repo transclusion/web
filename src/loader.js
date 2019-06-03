@@ -1,9 +1,18 @@
-import {client} from './sanity'
+import {groqLoader} from './loaders/groq'
 
 // const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-export function resolveLoader (store, loader) {
-  const ref = store.ref(loader.key)
+function getLoader (type) {
+  switch (type) {
+    case 'groq':
+      return groqLoader
+    default:
+      throw new Error(`Unknown query: ${type}`)
+  }
+}
+
+export function load (store, query) {
+  const ref = store.ref(query.key)
 
   if (ref.get('data')) {
     // already loaded
@@ -13,14 +22,14 @@ export function resolveLoader (store, loader) {
   ref.set({isLoading: true})
 
   return (
-    client
-      .fetch(loader.query, loader.params)
+    getLoader(query.type)
+      .load(query)
       .then(data => ref.set({data}))
       // .then(data => delay(0).then(() => ref.set({data})))
       .catch(err => ref.set({error: err.message}))
   )
 }
 
-export function resolveLoaders (ref, loaders) {
-  return Promise.all(loaders.map(l => resolveLoader(ref, l)))
+export function resolveLoaders (ref, queries) {
+  return Promise.all(queries.map(l => load(ref, l)))
 }

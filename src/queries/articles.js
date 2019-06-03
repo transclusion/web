@@ -1,23 +1,22 @@
 const __DEV__ = process.env.NODE_ENV
 
-const QUERY_ALL_ARTICLES = `*[
-  _type == $type
+const query = `*[
+  _type == 'article'
   && defined(slug)
   ${__DEV__ ? '' : `&& defined(publishedAt)`}
 ] | order(publishedAt desc) {
+  'key': _id,
   publishedAt,
-  "key": _id,
   metadata,
   slug,
   title,
   excerpt
 }`
 
-export function loadArticles () {
+export function queryArticles () {
   return {
     type: 'groq',
     key: 'articles',
-    query: QUERY_ALL_ARTICLES,
-    params: {type: 'article'}
+    query
   }
 }

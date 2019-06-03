@@ -1,4 +1,4 @@
-const QUERY_SETTINGS = `*[_type == $type && _id == $id][0] {
+const query = `*[_type == 'settings' && _id == 'settings'][0] {
   baseUrl,
   title,
   description,
@@ -11,11 +11,10 @@ const QUERY_SETTINGS = `*[_type == $type && _id == $id][0] {
   }
 }`
 
-export function loadSettings () {
+export function querySettings () {
   return {
     type: 'groq',
     key: 'settings',
-    query: QUERY_SETTINGS,
-    params: {type: 'settings', id: 'settings'}
+    query
   }
 }

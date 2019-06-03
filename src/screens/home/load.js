@@ -1,6 +1,6 @@
-import {loadArticles} from '../../loaders/articles'
-import {loadSettings} from '../../loaders/settings'
+import {queryArticles} from '../../queries/articles'
+import {querySettings} from '../../queries/settings'
 
 export function load () {
-  return [loadArticles(), loadSettings()]
+  return [queryArticles(), querySettings()]
 }
