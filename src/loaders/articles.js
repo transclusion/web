@@ -1,4 +1,10 @@
-const QUERY_ALL_ARTICLES = `*[_type == $type && defined(slug) && defined(publishedAt)] | order(publishedAt desc) {
+const __DEV__ = process.env.NODE_ENV
+
+const QUERY_ALL_ARTICLES = `*[
+  _type == $type
+  && defined(slug)
+  ${__DEV__ ? '' : `&& defined(publishedAt)`}
+] | order(publishedAt desc) {
   publishedAt,
   "key": _id,
   metadata,

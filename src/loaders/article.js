@@ -1,4 +1,10 @@
-const QUERY_ARTICLE = `*[_type == $type && slug.current == $slug && defined(publishedAt)]{
+const __DEV__ = process.env.NODE_ENV
+
+const QUERY_ARTICLE = `*[
+  _type == $type
+  && slug.current == $slug
+  ${__DEV__ ? '' : `&& defined(publishedAt)`}
+]{
   publishedAt,
   metadata,
   title,

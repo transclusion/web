@@ -49,7 +49,6 @@ function Home () {
       </Loader>
     )
   }
-  if (articles.data.length === 0) return <div>Empty</div>
   const seo = {
     ...(settings.data.seo || {}),
     url: `${settings.data.baseUrl}/`,
@@ -63,9 +62,12 @@ function Home () {
         <h1>{settings.data.title}</h1>
         <p>{settings.data.description}</p>
       </header>
-      <div>
-        <ArticleList items={articles.data || []} time={time} />
-      </div>
+      {articles.data.length > 0 && (
+        <div>
+          <ArticleList items={articles.data || []} time={time} />
+        </div>
+      )}
+      {/* articles.data.length === 0 && <div>Nothing to see here.</div> */}
     </Root>
   )
 }

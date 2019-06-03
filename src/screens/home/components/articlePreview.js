@@ -32,11 +32,6 @@ const Preview = styled.li`
     bottom: 0;
     right: 0;
     padding: 2em 1.25em;
-    /* transition: opacity 250ms; */
-  }
-
-  & > a:hover > div {
-    /* opacity: 0; */
   }
 
   & h3 {
@@ -54,7 +49,7 @@ const Preview = styled.li`
 
 export function ArticlePreview ({data, onRegister, time}) {
   const theme = useTheme()
-  const publishedTime = Date.parse(data.publishedAt)
+  const publishedTime = data.publishedAt ? Date.parse(data.publishedAt) : Date.now()
   const offset = (time - publishedTime) / 50000000
   const headerRatio = get(data, 'metadata/headerRatio') || '1:1'
   const fg = get(data, 'metadata/fg/hex') || theme.bg

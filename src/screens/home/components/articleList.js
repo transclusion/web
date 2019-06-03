@@ -27,7 +27,9 @@ export function ArticleList ({items, time}) {
         if (rootElm.current) {
           const index = Array.from(rootElm.current.childNodes).indexOf(e.target.parentNode)
           if (e.intersectionRatio > 0.5) {
-            setFocusedTime(Date.parse(items[index].publishedAt))
+            setFocusedTime(
+              items[index].publishedAt ? Date.parse(items[index].publishedAt) : Date.now()
+            )
           }
         }
       })
