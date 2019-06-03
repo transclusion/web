@@ -7,6 +7,7 @@
     { "src": "dist/static/**/*", "use": "@now/static" }
   ],
   "routes": [
+    { "src": "/robots.txt", "dest": "dist/static/robots.txt" },
     { "src": "/static/(.*)", "dest": "dist/static/$1" },
     { "src": ".*", "dest": "dist/cjs/server.js" }
   ]
