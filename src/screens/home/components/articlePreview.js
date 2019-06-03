@@ -47,6 +47,7 @@ const Preview = styled.li`
   }
 
   & p {
+    font-size: 15px;
     margin: 0;
   }
 `

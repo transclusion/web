@@ -10,16 +10,19 @@ const Root = styled.article`
   margin: 0 auto;
 
   & > div {
-    padding: 1.5em;
+    padding: 1.5rem;
     margin: 0 auto;
+    font-size: 15px;
 
     & h2 {
-      margin: 4rem 0 2rem;
+      font-size: 1.25rem;
+      line-height: 1.25;
+      margin: 4rem 0 1rem;
     }
 
     & code {
       font-family: SF Mono, Menlo, monospace;
-      font-size: 14px;
+      font-size: 13px;
       background: ${({theme}) => theme.code.bg};
       color: ${({theme}) => theme.code.fg};
       padding: 2px;
@@ -61,7 +64,7 @@ const ArticleHeader = styled.header`
     top: 100%;
     left: 0;
     right: 0;
-    padding: 2em 1.25em;
+    padding: 2rem 1.25rem;
     transform: translate3d(0, -100%, 0);
   }
 
@@ -73,6 +76,7 @@ const ArticleHeader = styled.header`
   }
 
   & p {
+    font-size: 15px;
     margin: 0;
   }
 `
