@@ -16,7 +16,7 @@
     "now-build": "run-s babel-build parcel-build",
     "now-dev": "run-p babel-dev parcel-dev",
     "now-deploy": "now --target production",
-    "parcel-build": "NODE_ENV=production parcel build src/client.css src/client.js --out-dir dist/static",
+    "parcel-build": "NODE_ENV=production parcel build src/styles/base.css src/styles/highlight.css src/client.js --out-dir dist/static",
     "parcel-dev": "parcel watch src/client.js --out-dir dist/static",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
