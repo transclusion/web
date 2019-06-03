@@ -10,7 +10,7 @@
     "build": "run-s clean babel-build parcel-build copy-static clean-static",
     "clean": "rimraf .cache dist",
     "clean-static": "rimraf dist/static/report.html",
-    "copy-static": "cpx static/* dist/static/",
+    "copy-static": "cpx 'static/*' dist/static/",
     "deploy": "run-s build clean-static now-deploy",
     "dev": "parcel src/dev.html",
     "format": "prettier-eslint --write \"**/*.js\"",
