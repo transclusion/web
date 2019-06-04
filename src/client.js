@@ -43,7 +43,7 @@ if ('serviceWorker' in navigator) {
   // Use the window load event to keep the page load performant
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register('./serviceWorker.js')
+      .register('./serviceWorker.js', {scope: '/'})
       .catch(() => console.warn('failed to register service worker'))
   })
 }

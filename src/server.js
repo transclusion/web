@@ -27,6 +27,11 @@ function renderDocument ({helmet, html, state, style, theme}) {
     ${helmet.title.toString()}
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     ${helmet.meta.toString()}
+    <link rel="apple-touch-icon" href="/static/assets/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/static/assets/apple-touch-icon-precomposed.png">
+    <meta name="apple-mobile-web-app-title" content="Transclusion">
+    <meta name="apple-mobile-web-app-capable">
+    <meta name="application-name" class="app-title" content="Transclusion">
     <meta name="theme-color" content="#166DF9">
     <link rel="stylesheet" href="/static/styles/highlight.css">
     <link rel="stylesheet" href="/static/styles/base.css">
