@@ -21,7 +21,7 @@ export function SEO (props) {
       {image && <meta property='og:image:width' content={image.width} />}
       {image && <meta property='og:image:height' content={image.height} />}
       {/* Talk to robots */}
-      <meta name='robots' content='noindex, nofollow' />
+      <meta name='robots' content='index' />
     </Helmet>
   )
 }
