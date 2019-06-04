@@ -13,8 +13,8 @@ const PRECACHE_URLS = [
   '/static/assets/favicon-96x96.png',
   '/static/assets/icon-192.png',
   '/static/assets/icon-512.png',
-  '/static/styles/base.css',
-  '/static/styles/highlight.css'
+  '/static/base.css',
+  '/static/highlight.css'
 ]
 
 const API_BASE_URL = 'https://ykqc8n2b.apicdn.sanity.io'

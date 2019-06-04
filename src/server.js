@@ -27,8 +27,8 @@ function renderDocument ({helmet, html, state, style, theme}) {
     ${helmet.title.toString()}
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     ${helmet.meta.toString()}
-    <link rel="stylesheet" href="/static/styles/highlight.css">
-    <link rel="stylesheet" href="/static/styles/base.css">
+    <link rel="stylesheet" href="/static/highlight.css">
+    <link rel="stylesheet" href="/static/base.css">
     <link rel="icon" type="image/png" href="/static/assets/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/static/assets/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/static/assets/favicon-96x96.png" sizes="96x96">
