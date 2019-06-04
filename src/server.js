@@ -27,6 +27,7 @@ function renderDocument ({helmet, html, state, style, theme}) {
     ${helmet.title.toString()}
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     ${helmet.meta.toString()}
+    <meta name="theme-color" content="#166DF9">
     <link rel="stylesheet" href="/static/styles/highlight.css">
     <link rel="stylesheet" href="/static/styles/base.css">
     <link rel="icon" type="image/png" href="/static/assets/favicon-16x16.png" sizes="16x16">
