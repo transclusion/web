@@ -10,6 +10,8 @@ export function matchRoute ({path, query}) {
   switch (true) {
     case path === '/':
       return {name: 'home', params: {}}
+    case path === '/offline':
+      return {name: 'offline', params: {}}
     case path.startsWith('/article/'):
       return {
         name: 'article',

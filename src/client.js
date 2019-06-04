@@ -37,3 +37,13 @@ loadTheme(initialTheme)
 
 // Render React app
 render(<Provider children={<App />} />, document.getElementById('root'))
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+  // Use the window load event to keep the page load performant
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('./serviceWorker.js')
+      .catch(() => console.warn('failed to register service worker'))
+  })
+}

@@ -9,6 +9,7 @@
   "routes": [
     { "src": "/manifest.json", "dest": "dist/static/manifest.json" },
     { "src": "/robots.txt", "dest": "dist/static/robots.txt" },
+    { "src": "/serviceWorker.js", "dest": "dist/static/serviceWorker.js" },
     { "src": "/static/(.*)", "dest": "dist/static/$1" },
     { "src": ".*", "dest": "dist/cjs/server.js" }
   ]
