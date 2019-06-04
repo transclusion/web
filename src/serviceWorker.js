@@ -13,8 +13,8 @@ const PRECACHE_URLS = [
   '/static/assets/favicon-96x96.png',
   '/static/assets/icon-192.png',
   '/static/assets/icon-512.png',
-  '/static/base.css',
-  '/static/highlight.css'
+  '/static/styles/base.css',
+  '/static/styles/highlight.css'
 ]
 
 const API_BASE_URL = 'https://ykqc8n2b.apicdn.sanity.io'
@@ -47,6 +47,7 @@ self.addEventListener('activate', event => {
 // If no response is found, it populates the runtime cache with the response
 // from the network before returning it to the page.
 self.addEventListener('fetch', event => {
+  console.log('fetch', event.request.url)
   // All Sanity requests
   if (event.request.url.startsWith(API_BASE_URL)) {
     // Cache then network
