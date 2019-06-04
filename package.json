@@ -19,7 +19,7 @@
     "now-dev": "run-p babel-dev parcel-dev",
     "now-deploy": "now --target production",
     "parcel-build-assets": "NODE_ENV=production parcel build src/assets/*.png --out-dir dist/static/assets --public-url /static/assets/",
-    "parcel-build-js": "NODE_ENV=production parcel build src/client.js --out-dir dist/static --public-url /",
+    "parcel-build-js": "NODE_ENV=production parcel build src/client.js --out-dir dist/static --public-url /static/",
     "parcel-build-styles": "NODE_ENV=production parcel build src/styles/base.css src/styles/highlight.css --out-dir dist/static/styles --public-url /static/styles/",
     "parcel-dev": "parcel watch src/client.js --out-dir dist/static",
     "test": "echo \"Error: no test specified\" && exit 1"

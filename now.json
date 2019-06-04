@@ -10,6 +10,7 @@
     { "src": "/manifest.json", "dest": "dist/static/manifest.json" },
     { "src": "/robots.txt", "dest": "dist/static/robots.txt" },
     { "src": "/serviceWorker.js", "dest": "dist/static/serviceWorker.js" },
+    { "src": "/serviceWorker.js.map", "dest": "dist/static/serviceWorker.js.map" },
     { "src": "/static/(.*)", "dest": "dist/static/$1" },
     { "src": ".*", "dest": "dist/cjs/server.js" }
   ]
